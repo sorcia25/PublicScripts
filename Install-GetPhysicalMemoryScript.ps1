@@ -12,4 +12,4 @@ $argument = '-NoProfile -WindowStyle Hidden -file '+ $path
 $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument $argument 
 $trigger =  New-ScheduledTaskTrigger -Daily -At 1am
 $principal = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Highest
-Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "GetTotalPhysicalMemory" -Description "Run a Powershell script to get total Physical Memory and save the value in a Registry Key" -Principal $principal
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "Get-PhysicalMemory" -Description "Run a Powershell script to get total Physical Memory and save the value in a Registry Key" -Principal $principal
