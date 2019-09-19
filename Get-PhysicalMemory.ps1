@@ -6,6 +6,5 @@ $Memory1 = (systeminfo | Select-String 'Total Physical Memory:').ToString().Spli
 $Memory2 = $Memory1.Replace('MB','')
 $Memory3 = $Memory2.Replace(',','')
 $TotalMemory = [int]$Memory3
-
-New-Item -Path HKLM:\SYSTEM\ -Name TotalPhysicalMemory -Force
+New-Item -Path HKLM:\SYSTEM\ -Name TotalPhysicalMeory -Force
 Set-Item -Path HKLM:\SYSTEM\TotalPhysicalMemory -Value $TotalMemory -Type String -Force
