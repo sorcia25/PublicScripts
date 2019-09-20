@@ -1,5 +1,5 @@
-$preRegPath = 'HKLM:\SYSTEM\'
-$RegKey = 'TotalPhysicalMemory'
+$preRegPath = 'HKLM:\HARDWARE\RESOURCEMAP\System Resources\'
+$RegKey = 'Physical Memory Secnesys'
 $registrypath = $preRegPath+$RegKey
 # Get memory data
 $Memory1 = (systeminfo | Select-String 'Total Physical Memory:').ToString().Split(':')[1].Trim()
