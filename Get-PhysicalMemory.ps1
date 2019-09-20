@@ -7,5 +7,6 @@ $Memory2 = $Memory1.Replace('MB','')
 $Memory3 = $Memory2.Replace(',','')
 $TotalMemory = [int]$Memory3
 # Create the Registry property
-New-Item -Path HKLM:\SYSTEM\ -Name TotalPhysicalMemory -Force
-New-ItemProperty -Path HKLM:\SYSTEM\TotalPhysicalMemory -Name MemoryinMB -PropertyType String -Value $TotalMemory
+New-Item -Path $preRegPath -Name $RegKey -Force
+$NewRegItem = $preRegPath+$RegKey
+New-ItemProperty -Path $NewRegItem -Name MemoryinMB -PropertyType String -Value $TotalMemory
