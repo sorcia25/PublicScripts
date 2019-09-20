@@ -1,4 +1,4 @@
-$preRegPath = 'HKLM:\HARDWARE\RESOURCEMAP\System Resources\'
+$preRegPath = 'HKLM:\SYSTEM\'
 $RegKey = 'Physical Memory Secnesys'
 $registrypath = $preRegPath+$RegKey
 # Get memory data
